@@ -1,0 +1,83 @@
+# YULi 主页自动更新
+# 1) latest-posts：读取公众号 RSS，更新 README 里 BLOG-POST-LIST 标记之间的文章列表
+# 2) snake：根据贡献图生成小蛇动画，推送到 output 分支
+#
+# 首次配置：
+# - Settings → Actions → General → Workflow permissions 选 "Read and write permissions"
+# - Settings → Secrets and variables → Actions 新建 secret：WECHAT_RSS_URL = 你的公众号 RSS 地址
+#   （地址不怕公开的话，也可以建成同名 variable）
+#   没配置 RSS 时会跳过文章更新，README 里会一直显示占位文字，workflow 本身不会报错。
+
+name: Update profile
+
+on:
+  schedule:
+    - cron: "0 1 * * *" # 每天北京时间 09:00（01:00 UTC）
+  workflow_dispatch: # 支持在 Actions 页面手动运行
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
+jobs:
+  latest-posts:
+    name: Update latest WeChat posts
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      RSS_URL: ${{ secrets.WECHAT_RSS_URL || vars.WECHAT_RSS_URL }}
+    steps:
+      - name: Checkout
+        if: env.RSS_URL != ''
+        uses: actions/checkout@v7
+
+      - name: Update README with latest posts
+        if: env.RSS_URL != ''
+        uses: gautamkrishnar/blog-post-workflow@v1
+        env:
+          TZ: Asia/Shanghai # 文章日期按北京时间显示
+        with:
+          feed_list: ${{ env.RSS_URL }}
+          max_post_count: 5
+          template: "• [$title]($url) · $date<br>$newline"
+          date_format: "yyyy-mm-dd"
+          title_max_length: 26
+          tag_post_pre_newline: true # 列表另起一行，保证在表格里能正常渲染 Markdown 链接
+          retry_count: 3
+          retry_wait_time: 10
+          commit_message: "chore: update latest posts"
+          committer_username: "github-actions[bot]"
+          committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Skip notice
+        if: env.RSS_URL == ''
+        run: echo "::notice::WECHAT_RSS_URL is not set, skipping latest-posts update."
+
+  snake:
+    name: Generate contribution snake
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Generate snake SVGs
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: dist
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
