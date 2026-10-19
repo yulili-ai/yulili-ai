@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
   <title id="title">YULi OS 启动动画</title>
-  <desc id="desc">黑白终端风格的自我介绍，点击进入李雨 YULi 的个人网站</desc>
+  <desc id="desc">黑白终端风格的自我介绍：AI 产品经理，点击进入李雨 YULi 的个人网站</desc>
   <style>
     .window { fill: #ffffff; stroke: #000000; stroke-width: 2; }
     .bar { fill: #000000; }
@@ -52,15 +52,15 @@
   <circle cx="66" cy="27" r="6" fill="#ffffff"/>
   <text class="mono meta" x="500" y="31" text-anchor="middle">yuli@studio — yulili-ai — 100×30</text>
 
-  <text class="mono title line l1" x="54" y="96">YULi OS v1.0 — Black &amp; White</text>
+  <text class="mono title line l1" x="54" y="96">YULi OS v2.0 — AI Product</text>
 
-  <text class="mono body line l2" x="54" y="130">[ <tspan class="ok">OK</tspan> ] 载入设计内核 brand-design.core     <tspan class="muted">// 10+ 年品牌与 UX</tspan></text>
-  <text class="mono body line l3" x="54" y="161">[ <tspan class="ok">OK</tspan> ] 挂载 /ai-coding      想法直接变成可运行的产品</text>
-  <text class="mono body line l4" x="54" y="192">[ <tspan class="ok">OK</tspan> ] 挂载 /ai-product     从概念到上线的 AI 产品落地</text>
-  <text class="mono body line l5" x="54" y="223">[ <tspan class="ok">OK</tspan> ] 挂载 /taste          商业化与审美的判断</text>
+  <text class="mono body line l2" x="54" y="130">[ <tspan class="ok">OK</tspan> ] 载入产品内核 ai-product.core   <tspan class="muted">// 3 年 AI 产品 · 10 年互联网</tspan></text>
+  <text class="mono body line l3" x="54" y="161">[ <tspan class="ok">OK</tspan> ] 挂载 /value          商业价值与品牌策略</text>
+  <text class="mono body line l4" x="54" y="192">[ <tspan class="ok">OK</tspan> ] 挂载 /experience     用户体验与场景洞察</text>
+  <text class="mono body line l5" x="54" y="223">[ <tspan class="ok">OK</tspan> ] 挂载 /intelligence   AI Agent 与 AI coding</text>
 
   <text class="mono prompt line l6" x="54" y="271">yuli@studio ~ % <tspan class="body">whoami</tspan></text>
-  <text class="mono body line l7" x="54" y="302">李雨 YULi · 品牌与设计 × AI 产品经理</text>
+  <text class="mono body line l7" x="54" y="302">李雨 YULi · AI 产品经理</text>
 
   <text class="mono prompt line l8" x="54" y="350">yuli@studio ~ % <tspan class="body">open yulili-ai.github.io</tspan><tspan class="cursor"> ▍</tspan></text>
 
