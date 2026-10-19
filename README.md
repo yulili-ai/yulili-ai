@@ -15,13 +15,30 @@
 <a href="https://YOUR-PORTFOLIO-URL"><img src="https://img.shields.io/badge/%E4%BD%9C%E5%93%81%E9%9B%86-111111?style=flat-square&logo=About.me&logoColor=white" alt="作品集" /></a>
 -->
 
-<!-- 「正在做」先隐藏；有项目后，把下面这段注释里的内容挪到「最新文章」上面即可恢复
-**正在做**
+---
 
-• [项目名](链接) · 一句话介绍<br>
-• [项目名](链接) · 一句话介绍<br>
-• [项目名](链接) · 一句话介绍
+## ⭐ Featured projects
+
+用设计的视角，做能跑起来的 AI 产品与工具。
+
+🏠 [**zi-home-brand-site**](https://github.com/yulili-ai/zi-home-brand-site)<br>
+智爱家单页品牌网站。<br>
+无构建，纯静态 HTML / CSS / JS。
+
+📒 [**aipm-course-notes**](https://github.com/yulili-ai/aipm-course-notes)<br>
+AI 产品经理课程学习笔记。
+
+<!-- daily-notes 仓库建好后，取消下面几行注释
+📆 [**daily-notes**](https://github.com/yulili-ai/daily-notes)<br>
+每日学习记录。<br>
+自动生成索引与连续记录统计。
 -->
+
+---
+
+## ✍️ Writing
+
+我写 Agent 体验、复杂产品与设计工程化。
 
 <a id="latest-posts"></a>**最新文章** · 公众号「YULi.AI产品与体验」
 
@@ -29,6 +46,15 @@
 <!-- BLOG-POST-LIST:START -->
 • 在微信搜索「YULi.AI产品与体验」，阅读我最近的文章
 <!-- BLOG-POST-LIST:END -->
+
+---
+
+## About
+
+- 资深设计师
+- 关注 Agent 体验、复杂产品与设计工程化
+- 正在动手用 AI 做东西，把设计经验变成能复用的工具与方法
+<!-- 想补充的话可以加在这里：行业背景、学历、专利、正在探索的方向 -->
 
 <!-- 贡献图小蛇动画：由 .github/workflows/profile.yml 生成，并推送到 output 分支（第一次运行 workflow 之前图片会显示不出来） -->
 <picture>
