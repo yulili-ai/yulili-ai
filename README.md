@@ -15,12 +15,12 @@
 <a href="https://YOUR-PORTFOLIO-URL"><img src="https://img.shields.io/badge/%E4%BD%9C%E5%93%81%E9%9B%86-111111?style=flat-square&logo=About.me&logoColor=white" alt="作品集" /></a>
 -->
 
-<!-- 「正在做」先隐藏；有项目后，把下面这段注释里的内容挪到「最新文章」上面即可恢复
 **正在做**
 
-• [项目名](链接) · 一句话介绍<br>
-• [项目名](链接) · 一句话介绍<br>
-• [项目名](链接) · 一句话介绍
+• [zi-home-brand-site](https://github.com/yulili-ai/zi-home-brand-site) · 智爱家单页品牌网站，无构建的纯静态 HTML / CSS / JS<br>
+• [aipm-course-notes](https://github.com/yulili-ai/aipm-course-notes) · AI 产品经理课程学习笔记
+<!-- daily-notes 仓库建好后，把上一行末尾补上 <br>，并取消下一行注释
+• [daily-notes](https://github.com/yulili-ai/daily-notes) · 每日学习记录，自动生成索引与连续记录统计
 -->
 
 <a id="latest-posts"></a>**最新文章** · 公众号「YULi.AI产品与体验」
