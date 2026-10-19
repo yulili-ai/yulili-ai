@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">YULi OS 启动动画</title>
+  <desc id="desc">黑白终端风格的自我介绍，点击进入李雨 YULi 的个人网站</desc>
+  <style>
+    .window { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+    .bar { fill: #000000; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "PingFang SC", "Microsoft YaHei", monospace; }
+    .meta { fill: #ffffff; font-size: 12px; letter-spacing: .8px; }
+    .title { fill: #000000; font-size: 18px; font-weight: 700; }
+    .body { fill: #4a4a4a; font-size: 16px; }
+    .prompt { fill: #000000; font-size: 16px; font-weight: 700; }
+    .ok { fill: #000000; font-weight: 700; }
+    .muted { fill: #8f8f8f; }
+    .line { opacity: 0; animation: reveal 8s ease-in-out infinite; }
+    .l1 { animation-delay: .15s; }
+    .l2 { animation-delay: .48s; }
+    .l3 { animation-delay: .81s; }
+    .l4 { animation-delay: 1.14s; }
+    .l5 { animation-delay: 1.47s; }
+    .l6 { animation-delay: 1.80s; }
+    .l7 { animation-delay: 2.13s; }
+    .l8 { animation-delay: 2.46s; }
+    .ready { fill: #000000; font-size: 17px; font-weight: 700; opacity: 0; animation: ready 8s ease-in-out infinite; }
+    .cta-box { fill: #000000; opacity: 0; animation: cta 8s ease-in-out infinite; }
+    .cta { fill: #ffffff; font-size: 14px; letter-spacing: 1.8px; opacity: 0; animation: cta 8s ease-in-out infinite; }
+    .cursor { fill: #000000; animation: blink .85s steps(1) infinite; }
+    @keyframes reveal {
+      0%, 5% { opacity: 0; transform: translateY(5px); }
+      10%, 77% { opacity: 1; transform: translateY(0); }
+      88%, 100% { opacity: 0; transform: translateY(-2px); }
+    }
+    @keyframes ready {
+      0%, 42% { opacity: 0; transform: translateY(5px); }
+      48%, 82% { opacity: 1; transform: translateY(0); }
+      92%, 100% { opacity: 0; }
+    }
+    @keyframes cta {
+      0%, 50% { opacity: 0; }
+      57%, 84% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+    @keyframes blink { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .line, .ready, .cta, .cta-box, .cursor { animation: none; opacity: 1; }
+    }
+  </style>
+
+  <rect class="window" x="1" y="1" width="998" height="518" rx="14"/>
+  <path class="bar" d="M15 1h970a14 14 0 0 1 14 14v37H1V15A14 14 0 0 1 15 1z"/>
+  <circle cx="26" cy="27" r="6" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="46" cy="27" r="6" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="66" cy="27" r="6" fill="#ffffff"/>
+  <text class="mono meta" x="500" y="31" text-anchor="middle">yuli@studio — yulili-ai — 100×30</text>
+
+  <text class="mono title line l1" x="54" y="96">YULi OS v1.0 — Black &amp; White</text>
+
+  <text class="mono body line l2" x="54" y="130">[ <tspan class="ok">OK</tspan> ] 载入设计内核 brand-design.core     <tspan class="muted">// 10+ 年品牌与 UX</tspan></text>
+  <text class="mono body line l3" x="54" y="161">[ <tspan class="ok">OK</tspan> ] 挂载 /ai-coding      想法直接变成可运行的产品</text>
+  <text class="mono body line l4" x="54" y="192">[ <tspan class="ok">OK</tspan> ] 挂载 /ai-product     从概念到上线的 AI 产品落地</text>
+  <text class="mono body line l5" x="54" y="223">[ <tspan class="ok">OK</tspan> ] 挂载 /taste          商业化与审美的判断</text>
+
+  <text class="mono prompt line l6" x="54" y="271">yuli@studio ~ % <tspan class="body">whoami</tspan></text>
+  <text class="mono body line l7" x="54" y="302">李雨 YULi · 品牌与设计 × AI 产品经理</text>
+
+  <text class="mono prompt line l8" x="54" y="350">yuli@studio ~ % <tspan class="body">open yulili-ai.github.io</tspan><tspan class="cursor"> ▍</tspan></text>
+
+  <text class="mono ready" x="54" y="393">SYSTEM READY</text>
+  <rect class="cta-box" x="330" y="428" width="340" height="44" rx="4"/>
+  <text class="mono cta" x="500" y="455" text-anchor="middle">CLICK TO LAUNCH  →</text>
+</svg>
