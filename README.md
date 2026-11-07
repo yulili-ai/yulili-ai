@@ -37,7 +37,7 @@ streak 使用维护中的 https://streak-stats.demolab.com （DenverCoder1）。
 
 <p align="center">
   <a href="https://yulili-ai.github.io/">
-    <img src="https://raw.githubusercontent.com/yulili-ai/yulili-ai/main/assets/portfolio-launch.svg" alt="点击启动 YULi OS" width="820" />
+    <img src="https://raw.githubusercontent.com/yulili-ai/yulili-ai/main/assets/portfolio-launch-mitten.gif" alt="点击启动 YULi OS" width="820" />
   </a>
 </p>
 
