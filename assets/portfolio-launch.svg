@@ -67,4 +67,67 @@
   <text class="mono ready" x="54" y="393">SYSTEM READY</text>
   <rect class="cta-box" x="330" y="428" width="340" height="44" rx="4"/>
   <text class="mono cta" x="500" y="455" text-anchor="middle">CLICK TO LAUNCH  →</text>
+
+  <defs>
+    <radialGradient id="cat-fur" cx="32%" cy="22%" r="82%">
+      <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#e9e9e9"/>
+      <stop offset=".78" stop-color="#aaa"/><stop offset="1" stop-color="#666"/>
+    </radialGradient>
+    <radialGradient id="cat-muzzle" cx="40%" cy="20%" r="80%">
+      <stop stop-color="#fff"/><stop offset="1" stop-color="#c9c9c9"/>
+    </radialGradient>
+    <pattern id="cat-scan" width="5" height="5" patternUnits="userSpaceOnUse">
+      <rect width="5" height="1.2" fill="#171717" opacity=".66"/>
+      <rect y="1.2" width="5" height=".7" fill="#fff" opacity=".7"/>
+    </pattern>
+    <filter id="cat-shadow" x="-40%" y="-150%" width="180%" height="400%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <path id="cat-tail-shape" d="M192 212 C253 215 264 160 244 122 C239 110 224 113 224 127 C237 166 232 185 193 182Z"/>
+    <path id="cat-body-shape" d="M76 169 C54 194 59 236 69 258 L69 279 Q83 291 98 279 L103 251 L145 253 L149 280 Q164 291 178 278 L183 253 C209 243 216 196 191 174Z"/>
+    <path id="cat-head-shape" d="M44 93 C38 69 42 30 50 20 C64 20 91 39 102 50 Q133 40 158 51 C174 36 195 23 204 27 C214 37 215 77 208 98 C233 128 223 162 199 178 C159 205 91 200 58 175 C31 155 25 122 44 93Z"/>
+  </defs>
+  <style>
+    .cat-breathe { animation: cat-breathe 4s ease-in-out infinite; transform-origin: 130px 282px; }
+    .cat-tail { animation: cat-tail 4s ease-in-out infinite; transform-origin: 195px 205px; }
+    .cat-eyes { animation: cat-blink 6s linear infinite; transform-origin: 130px 124px; }
+    .cat-floor { animation: cat-floor 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes cat-breathe { 0%,100% {transform:translateY(0) scale(1,1)} 50% {transform:translateY(-3px) scale(1.012,1.018)} }
+    @keyframes cat-tail { 0%,100% {transform:rotate(-5deg)} 50% {transform:rotate(9deg)} }
+    @keyframes cat-blink {0%,39%,43%,72%,76%,100% {transform:scaleY(1)} 41%,74% {transform:scaleY(.09)} }
+    @keyframes cat-floor {0%,100% {opacity:.16;transform:scaleX(1)} 50% {opacity:.11;transform:scaleX(.92)}}
+    @media (prefers-reduced-motion:reduce) {
+      .cat-breathe,.cat-tail,.cat-eyes,.cat-floor {animation:none}
+    }
+  </style>
+  <g id="yuli-scanline-cat" transform="translate(716 143) scale(.94)" aria-label="黑白扫描线小猫，轻轻呼吸、眨眼和摆尾">
+    <ellipse class="cat-floor" cx="139" cy="288" rx="102" ry="8" fill="#000" opacity=".16" filter="url(#cat-shadow)"/>
+    <g class="cat-breathe">
+      <g class="cat-tail">
+        <use href="#cat-tail-shape" fill="url(#cat-fur)" stroke="#999" stroke-width=".7"/>
+        <use href="#cat-tail-shape" fill="url(#cat-scan)"/>
+      </g>
+      <use href="#cat-body-shape" fill="url(#cat-fur)" stroke="#aaa" stroke-width=".6"/>
+      <use href="#cat-body-shape" fill="url(#cat-scan)" opacity=".8"/>
+      <path d="M94 209 Q92 246 91 277 M155 211 Q157 253 160 277" stroke="#666" stroke-width="1.5" fill="none" opacity=".55"/>
+      <path d="M73 278h20 M153 278h20" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+      <use href="#cat-head-shape" fill="url(#cat-fur)" stroke="#aaa" stroke-width=".6"/>
+      <path d="M49 35 Q51 61 58 81 L88 58Z M196 40 L170 61 L202 86Z" fill="#373737"/>
+      <path d="M54 39 L62 67 L80 57Z M193 47 L180 61 L199 76Z" fill="#777"/>
+      <ellipse cx="128" cy="148" rx="48" ry="29" fill="url(#cat-muzzle)" opacity=".8"/>
+      <use href="#cat-head-shape" fill="url(#cat-scan)" opacity=".75"/>
+      <g class="cat-eyes" fill="#111">
+        <ellipse cx="85" cy="121" rx="13" ry="17"/><ellipse cx="169" cy="121" rx="13" ry="17"/>
+        <ellipse cx="81" cy="116" rx="3.7" ry="4.4" fill="#fff"/><ellipse cx="165" cy="116" rx="3.7" ry="4.4" fill="#fff"/>
+        <circle cx="89" cy="128" r="1.7" fill="#aaa"/><circle cx="173" cy="128" r="1.7" fill="#aaa"/>
+      </g>
+      <path d="M120 142 Q128 138 136 142 L129 149Z" fill="#191919"/>
+      <path d="M128 148v8 Q120 163 114 157 M128 156 Q136 163 142 157" fill="none" stroke="#252525" stroke-width="1.7" stroke-linecap="round"/>
+      <g stroke="#555" stroke-width=".9" fill="none" opacity=".65">
+        <path d="M97 148L52 141 M96 156L46 157 M158 148L201 140 M160 156L211 155"/>
+      </g>
+      <path d="M112 49L119 43L124 48L133 42L139 48" fill="none" stroke="#eee" stroke-width="3"/>
+    </g>
+  </g>
+
 </svg>
