@@ -2,8 +2,8 @@
 
 <a href="https://yulili-ai.github.io/">
   <picture>
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hero-capabilities-poster.png">
-    <img src="./assets/hero-capabilities.gif" width="100%" alt="Beyond the chatbox. — YULi：产品定义、交互设计、AI 原型开发与硬件探索。点击进入个人网站。">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hero-capabilities-poster.png?v=2">
+    <img src="./assets/hero-capabilities.gif?v=2" width="100%" alt="Beyond the chatbox. — YULi：产品定义、交互设计、AI 原型开发与硬件探索。点击进入个人网站。">
   </picture>
 </a>
 
