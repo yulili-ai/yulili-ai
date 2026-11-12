@@ -19,11 +19,11 @@ AI Native / Human–AI Interaction / AI Hardware
 
 ## Selected Builds
 
-开发与交互实验。配图为交互示意，具体实现与边界见项目说明。
+开发与交互实验。床边 AI 助手配图为本机界面截图，其他配图为交互示意；具体实现与边界见项目说明。
 
 <table>
   <tr>
-    <td width="300"><a href="./projects/bedside-agent.md"><img src="./assets/builds/bedside.svg" width="320" alt="Bedside Agent 交互示意：意图、实体确认与状态反馈"></a></td>
+    <td width="300"><a href="./projects/bedside-agent.md"><img src="./assets/bedside-agent/home.png" width="320" alt="Bedside Agent 本机界面：实体确认后的模拟台灯状态"></a></td>
     <td width="580">
       <h3>Bedside Agent</h3>
       <p>床边 AI 助手<br>意图理解、实体确认与执行反馈。</p>
