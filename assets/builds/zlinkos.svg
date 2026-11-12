@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">ZlinkOS · Concept</title><desc id="desc">Device coordination with an execution branch and retry loop — conceptual illustration, not a device photograph or live product screenshot.</desc>
+<defs>
+ <linearGradient id="back" x2="0" y2="1"><stop stop-color="#161d26"/><stop offset="1" stop-color="#10151c"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#293440"/><stop offset=".5" stop-color="#151d26"/><stop offset="1" stop-color="#1c2733"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#0b1017"/><stop offset="1" stop-color="#19232f"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#8ba4b7" stop-opacity=".10"/><stop offset="1" stop-color="#8ba4b7" stop-opacity="0"/></radialGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#aebac8" opacity=".10"/></pattern>
+ <clipPath id="clip"><rect x=".5" y=".5" width="639" height="359" rx="12"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="640" height="360" fill="url(#back)"/><ellipse cx="315" cy="230" rx="290" ry="170" fill="url(#light)"/>
+<g fill="none" stroke="#798c9f" stroke-width=".65" opacity=".13"><path d="M32.0 244L-400 360"/><path d="M58.0 244L-335 360"/><path d="M84.0 244L-270 360"/><path d="M110.0 244L-205 360"/><path d="M136.0 244L-140 360"/><path d="M162.0 244L-75 360"/><path d="M188.0 244L-10 360"/><path d="M214.0 244L55 360"/><path d="M240.0 244L120 360"/><path d="M266.0 244L185 360"/><path d="M292.0 244L250 360"/><path d="M318.0 244L315 360"/><path d="M344.0 244L380 360"/><path d="M370.0 244L445 360"/><path d="M396.0 244L510 360"/><path d="M422.0 244L575 360"/><path d="M448.0 244L640 360"/><path d="M474.0 244L705 360"/><path d="M500.0 244L770 360"/><path d="M526.0 244L835 360"/><path d="M552.0 244L900 360"/><path d="M578.0 244L965 360"/><path d="M604.0 244L1030 360"/><path d="M630.0 244L1095 360"/><path d="M0 254H640"/><path d="M0 268H640"/><path d="M0 285H640"/><path d="M0 307H640"/><path d="M0 337H640"/></g>
+<g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2" fill="#c2ccd6"><text x="27" y="32">CONCEPT / INTERACTION STUDY</text></g>
+<path d="M27 47H613" stroke="#aebac8" stroke-opacity=".12"/>
+
+<ellipse cx="149" cy="188" rx="37" ry="7" fill="#080d13"/><ellipse cx="318" cy="188" rx="61" ry="7" fill="#080d13"/><ellipse cx="490" cy="188" rx="40" ry="7" fill="#080d13"/>
+<path d="M119 103V169C119 183 180 183 180 169V103Z" fill="url(#metal)" stroke="#b5c2cf" stroke-width="1.3"/>
+<ellipse cx="149.5" cy="103" rx="30.5" ry="9" fill="#1e2934" stroke="#b5c2cf" stroke-width="1.3"/>
+<ellipse cx="149.5" cy="103" rx="22" ry="5.5" fill="none" stroke="#6f8395" stroke-width=".65"/>
+<path d="M119 159Q149 173 180 159" fill="none" stroke="#617688" stroke-width=".8"/>
+<path d="M126 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M131 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M136 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M141 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M146 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M151 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M156 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M161 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M166 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M171 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/><path d="M176 117V157" stroke="#7d91a3" opacity=".38" stroke-width=".7"/>
+<rect x="261" y="89" width="115" height="76" rx="5" fill="url(#metal)" stroke="#c1ccd5" stroke-width="1.4"/>
+<rect x="267" y="95" width="103" height="64" rx="1" fill="url(#glass)" stroke="#556c80" stroke-width=".7"/>
+<path d="M313 165v18h-24M324 165v18h24M289 184H348" fill="none" stroke="#b5c2cf" stroke-width="1.3"/>
+<path d="M283 139h13v-12h13v8h13v-24h13v18h19" fill="none" stroke="#8eb0c3" stroke-width="1.2" opacity=".65"/>
+<path d="M474 91h37q11 0 11 11v65q0 11 -11 11h-37q-11 0 -11 -11v-65q0 -11 11 -11Z" fill="url(#metal)" stroke="#c1ccd5" stroke-width="1.4"/>
+<path d="M480 116v10M502 116v10" stroke="#d2dae2" stroke-width="3" stroke-linecap="round"/>
+<path d="M486 147q6 -6 12 0v7h-12Z" fill="none" stroke="#8fa1b2" stroke-width="1.1"/>
+<circle cx="492" cy="167" r="1.8" fill="#91b6c8"/>
+<g fill="none" stroke="#9aabba" stroke-width="1.3"><path d="M149 184v29q0 10 10 10h319q14 0 14 -14v-25M318 188v50"/></g>
+<circle cx="318" cy="223" r="3.5" fill="#d8e1e8"/>
+<path d="M318 238l25 19 -25 19 -25 -19Z" fill="#17222d" stroke="#c1cdda" stroke-width="1.4"/>
+<path d="M318 276v28H194M343 257H448q14 0 14 -14v-16" fill="none" stroke="#86adbf" stroke-width="1.3"/>
+<path d="M457 235l5 -9 5 9" fill="none" stroke="#86adbf" stroke-width="1.3"/>
+<circle cx="194" cy="304" r="3" fill="#aebac8"/>
+<g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.6" fill="#91a2b2"><text x="363" y="280">RETRY</text><text x="206" y="298">COMPLETE</text></g>
+<path d="M377 302h85" stroke="#668295" stroke-width=".8" stroke-dasharray="2 5" opacity=".6"/>
+
+<g stroke="#aebac8" stroke-opacity=".4" fill="none" stroke-width="1"><path d="M25 317v17h17M615 317v17h-17"/></g>
+</g><rect x=".5" y=".5" width="639" height="359" rx="12" fill="none" stroke="#aebac8" stroke-opacity=".25"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="426" viewBox="0 0 1200 426">
+  <rect width="1200" height="426" fill="#f2f1ed"/>
+  <text x="54" y="38" font-family="Arial,sans-serif" font-size="15" letter-spacing="2.1" fill="#333">YULi — PRODUCT × AI</text>
+  <g font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="82" letter-spacing="-3.4" fill="#101010"><text x="50" y="121">Beyond the</text><text x="50" y="201">chatbox.</text></g>
+  <defs><clipPath id="terminal"><rect x="52" y="223" width="730" height="123"/></clipPath></defs>
+  <g clip-path="url(#terminal)" font-family="Menlo,monospace,PingFang SC" font-size="20" fill="#171717"><text x="54" y="246" opacity="0.55">yuli@studio ~ % load capabilities</text><text x="54" y="277" opacity="1">[OK] /product      产品定义 · 场景拆解</text><text x="54" y="308" opacity="1">[OK] /interaction  交互设计 · Agent 体验</text><text x="54" y="339" opacity="1">[OK] /prototype    AI coding · 原型开发 ▍</text></g>
+  <text x="54" y="394" font-family="Menlo,monospace" font-size="12" fill="#7b7a75" letter-spacing="1.2">PRODUCT THINKING / HANDS-ON BUILDING</text>
+  </svg>

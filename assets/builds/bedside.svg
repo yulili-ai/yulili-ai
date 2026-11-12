@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">Bedside Agent · Concept</title><desc id="desc">A physical confirmation device and intent / confirm / state flow — conceptual illustration, not a device photograph or live product screenshot.</desc>
+<defs>
+ <linearGradient id="back" x2="0" y2="1"><stop stop-color="#161d26"/><stop offset="1" stop-color="#10151c"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#293440"/><stop offset=".5" stop-color="#151d26"/><stop offset="1" stop-color="#1c2733"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#0b1017"/><stop offset="1" stop-color="#19232f"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#8ba4b7" stop-opacity=".10"/><stop offset="1" stop-color="#8ba4b7" stop-opacity="0"/></radialGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#aebac8" opacity=".10"/></pattern>
+ <clipPath id="clip"><rect x=".5" y=".5" width="639" height="359" rx="12"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="640" height="360" fill="url(#back)"/><ellipse cx="315" cy="230" rx="290" ry="170" fill="url(#light)"/>
+<g fill="none" stroke="#798c9f" stroke-width=".65" opacity=".13"><path d="M32.0 244L-400 360"/><path d="M58.0 244L-335 360"/><path d="M84.0 244L-270 360"/><path d="M110.0 244L-205 360"/><path d="M136.0 244L-140 360"/><path d="M162.0 244L-75 360"/><path d="M188.0 244L-10 360"/><path d="M214.0 244L55 360"/><path d="M240.0 244L120 360"/><path d="M266.0 244L185 360"/><path d="M292.0 244L250 360"/><path d="M318.0 244L315 360"/><path d="M344.0 244L380 360"/><path d="M370.0 244L445 360"/><path d="M396.0 244L510 360"/><path d="M422.0 244L575 360"/><path d="M448.0 244L640 360"/><path d="M474.0 244L705 360"/><path d="M500.0 244L770 360"/><path d="M526.0 244L835 360"/><path d="M552.0 244L900 360"/><path d="M578.0 244L965 360"/><path d="M604.0 244L1030 360"/><path d="M630.0 244L1095 360"/><path d="M0 254H640"/><path d="M0 268H640"/><path d="M0 285H640"/><path d="M0 307H640"/><path d="M0 337H640"/></g>
+<g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2" fill="#c2ccd6"><text x="27" y="32">CONCEPT / INTERACTION STUDY</text></g>
+<path d="M27 47H613" stroke="#aebac8" stroke-opacity=".12"/>
+
+<ellipse cx="236" cy="299" rx="123" ry="14" fill="#080d13" opacity=".6"/>
+<path d="M127 113L155 84Q160 79 168 80L289 88Q299 89 300 99L324 267Q326 280 314 284L180 295Q168 296 162 286L127 124Z" fill="#101821" stroke="#8c9eaf" stroke-width="1.3"/>
+<path d="M157 91L129 116L165 281L181 289" fill="none" stroke="#526779" stroke-width="1"/>
+<path d="M157 89Q160 84 168 85L287 93Q294 94 295 102L318 265Q320 275 310 278L183 289Q175 290 172 280Z" fill="url(#metal)" stroke="#d6dee5" stroke-width="1.6"/>
+<path d="M165 100L283 107L301 228L184 236Z" fill="url(#glass)" stroke="#aebac8" stroke-width="1.2"/>
+<path d="M171 106L278 112L294 220L190 228Z" fill="none" stroke="#5c7085" stroke-width=".65"/>
+<path d="M169 102L204 105L185 232" fill="#c4d0dc" opacity=".03"/>
+<g fill="none" stroke="#aebac8" stroke-width=".65" opacity=".35">
+ <path d="M135 122L168 278M139 119L172 279M143 115L176 281M147 111L179 283"/>
+ <path d="M130 126l24 -19M135 149l23 -17M141 173l21 -15M146 197l20 -13M151 221l19 -12M157 246l17 -9M162 271l17 -8"/>
+</g>
+<g fill="#cbd5df"><circle cx="251.00" cy="170.00" r="2.2" opacity="0.24"/><circle cx="247.56" cy="181.17" r="2.45" opacity="0.31"/><circle cx="238.56" cy="188.07" r="2.7" opacity="0.38"/><circle cx="227.44" cy="188.07" r="2.2" opacity="0.45"/><circle cx="218.44" cy="181.17" r="2.45" opacity="0.52"/><circle cx="215.00" cy="170.00" r="2.7" opacity="0.59"/><circle cx="218.44" cy="158.83" r="2.2" opacity="0.66"/><circle cx="227.44" cy="151.93" r="2.45" opacity="0.73"/><circle cx="238.56" cy="151.93" r="2.7" opacity="0.80"/><circle cx="247.56" cy="158.83" r="2.2" opacity="0.87"/>
+</g>
+<path d="M219 205l31 -2" stroke="#60758a" stroke-width="2" stroke-linecap="round"/>
+<g fill="#111922" stroke="#c2ccd6" stroke-width="1.4">
+ <ellipse cx="216" cy="257" rx="10" ry="11" transform="rotate(-8 216 257)"/>
+ <ellipse cx="274" cy="253" rx="10" ry="11" transform="rotate(-8 274 253)"/>
+</g>
+<g fill="none" stroke="#6b8093" stroke-width=".7"><ellipse cx="216" cy="257" rx="6.7" ry="7.4"/><ellipse cx="274" cy="253" rx="6.7" ry="7.4"/></g>
+<path d="M316 175H374V116H430M374 175H430M374 175V234H430" fill="none" stroke="#8296a8" stroke-width="1.4"/>
+<circle cx="374" cy="175" r="3" fill="#b9c9d7"/>
+<g fill="#151e28" stroke="#b1bfcd" stroke-width="1.2">
+ <rect x="430" y="96" width="126" height="40" rx="8"/><rect x="430" y="155" width="126" height="40" rx="8"/><rect x="430" y="214" width="126" height="40" rx="8"/>
+</g>
+<g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.8" fill="#aebac8"><text x="450" y="121">INTENT</text><text x="450" y="180">CONFIRM</text><text x="450" y="239">STATE</text></g>
+<circle cx="556" cy="175" r="4" fill="#d9ac69"/><circle cx="556" cy="175" r="9" fill="none" stroke="#d9ac69" stroke-opacity=".18"/>
+<path d="M374 246v19H430" fill="none" stroke="#6c8397" stroke-width="1" stroke-dasharray="3 5"/>
+
+<g stroke="#aebac8" stroke-opacity=".4" fill="none" stroke-width="1"><path d="M25 317v17h17M615 317v17h-17"/></g>
+</g><rect x=".5" y=".5" width="639" height="359" rx="12" fill="none" stroke="#aebac8" stroke-opacity=".25"/>
+</svg>
