@@ -7,6 +7,7 @@ not to arbitrary cat videos. No model, upload, or external service is used.
 """
 
 import argparse
+import math
 import os
 from pathlib import Path
 import subprocess
@@ -18,6 +19,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter
 SIZE = (580, 610)
 CROP = "crop=580:610:670:90"
 RUN_FRAMES = 14
+INTERACTION_FRAMES = 39
 
 # Envelopes follow the original scanline character while excluding the large
 # background shape above/right. White fur and the video backdrop are cleared
@@ -75,6 +77,109 @@ TAP_TAIL = [
 HEAD_OFFSETS = [0,0,-4,-6,-28,-30,-30,-27,-23,-18,-8,-5,0,0]
 FOOT_BOTTOMS = [596,596,578,574,535,535,535,535,540,543,583,589,596,596]
 
+# The later source poses turn the head and lift a paw. These envelopes follow
+# that genuine movement; the renderer can play/reverse them without a dissolve.
+INTERACTION_TAIL_KEYS = {
+    0: TAIL_KEYS[13],
+    6: [(341,373),(340,338),(350,302),(351,267),(356,232),(365,200),
+        (380,175),(405,150),(434,127),(466,121),(493,135),(507,160),
+        (509,190),(501,219),(484,247),(470,274),(454,306),(441,339),
+        (419,371),(389,400),(353,416)],
+    12: [(350,377),(348,343),(350,309),(350,275),(346,241),(350,203),
+         (357,170),(367,143),(387,119),(412,106),(439,110),(459,134),
+         (466,170),(472,205),(480,236),(476,271),(461,307),(446,344),
+         (426,376),(392,406),(354,422)],
+    18: [(349,393),(347,360),(364,327),(379,301),(386,270),(368,252),
+         (347,234),(341,207),(343,180),(359,155),(388,142),(419,143),
+         (448,155),(469,177),(484,206),(492,244),(495,282),(480,323),
+         (460,365),(421,402),(378,429)],
+    21: [(350,359),(351,328),(367,297),(389,273),(388,244),(366,225),
+         (344,211),(336,185),(342,160),(364,136),(392,118),(425,116),
+         (455,130),(478,152),(491,179),(501,214),(504,251),(492,286),
+         (474,322),(441,358),(399,388)],
+    27: [(348,377),(345,339),(362,306),(384,280),(397,248),(401,213),
+         (409,182),(413,154),(426,131),(447,119),(475,125),(491,145),
+         (499,173),(508,201),(512,234),(505,266),(484,298),(466,334),
+         (444,368),(408,402),(369,427)],
+    33: [(344,382),(341,349),(351,319),(364,286),(387,264),(400,240),
+         (414,215),(430,193),(451,175),(477,170),(499,178),(515,199),
+         (530,225),(536,255),(533,285),(518,315),(489,345),(459,369),
+         (426,396),(388,424),(354,431)],
+    38: TAP_TAIL,
+}
+
+
+def resample_polygon(points, count=100):
+    edges = list(zip(points, points[1:] + points[:1]))
+    lengths = [math.hypot(q[0] - p[0], q[1] - p[1]) for p, q in edges]
+    total = sum(lengths)
+    samples = []
+    edge = 0
+    consumed = 0
+    for index in range(count):
+        distance = index * total / count
+        while consumed + lengths[edge] < distance:
+            consumed += lengths[edge]
+            edge += 1
+        p, q = edges[edge]
+        u = (distance - consumed) / lengths[edge]
+        samples.append((p[0] + (q[0] - p[0]) * u,
+                        p[1] + (q[1] - p[1]) * u))
+    return samples
+
+
+def blend_polygon(a, b, u):
+    if u == 0:
+        return a
+    if u == 1:
+        return b
+    if len(a) != len(b):
+        a, b = resample_polygon(a), resample_polygon(b)
+    return [(p[0] + (q[0] - p[0]) * u, p[1] + (q[1] - p[1]) * u)
+            for p, q in zip(a, b)]
+
+
+def interpolate_keys(keys, frame):
+    if frame in keys:
+        return keys[frame]
+    indices = sorted(keys)
+    a, b = next((a, b) for a, b in zip(indices, indices[1:])
+                if a < frame < b)
+    u = (frame - a) / (b - a)
+    if isinstance(keys[a], (int, float)):
+        return keys[a] + (keys[b] - keys[a]) * u
+    return blend_polygon(keys[a], keys[b], u)
+
+
+def interaction_envelope(frame):
+    if frame == 0:
+        return [HEAD, TAIL_KEYS[13], [(40,410),(175,410),(175,596),(40,596)]], 596
+    if frame == 38:
+        return [TAP_HEAD, TAP_TAIL], 600
+    offset = interpolate_keys({0:0,3:0,6:-20,9:-30,12:-15,15:0,
+                               18:0,21:-20,24:-5,27:0,38:0}, frame)
+    turn = max(0, min(1, (frame - 17) / 21))
+    head = blend_polygon(HEAD, TAP_HEAD, turn)
+    head = [(x, y + offset if y < 470 else y) for x, y in head]
+    bottom = interpolate_keys({0:596,4:596,6:555,9:545,10:555,11:596,
+                               18:596,20:560,21:555,24:555,25:595,
+                               27:600,38:600}, frame)
+    foreleg = [(40,410),(180,410),(180,bottom),(40,bottom)]
+    rear_feet = [(150,450),(390,450),(390,bottom),(150,bottom)]
+    polygons = [head, interpolate_keys(INTERACTION_TAIL_KEYS, frame),
+                foreleg, rear_feet]
+    if frame >= 18:
+        # Preserve the tip of the rotating right ear; a generic silhouette
+        # interpolation otherwise trims it during the head turn.
+        tip_x = interpolate_keys({18:225,21:248,24:270,27:286,
+                                  30:300,33:308,38:322}, frame)
+        tip_y = interpolate_keys({18:135,21:110,24:112,27:135,
+                                  30:160,33:184,38:194}, frame)
+        polygons.append([(tip_x-60,tip_y+55),(tip_x-12,tip_y-4),
+                         (tip_x+16,tip_y-4),(tip_x+16,tip_y+100),
+                         (tip_x-38,tip_y+105)])
+    return polygons, bottom
+
 
 def tail_at(frame):
     """Interpolate the matte envelope, never the original pose pixels."""
@@ -123,6 +228,8 @@ def extract(video, destination):
         frames(4.3, RUN_FRAMES, temporary / "run-%02d.png")
         frames(1.5, 1, temporary / "idle.png")
         frames(6.0, 1, temporary / "tap.png")
+        frames(4.3 + 13 / 30, INTERACTION_FRAMES,
+               temporary / "interaction-%02d.png")
         for frame in range(RUN_FRAMES):
             offset = HEAD_OFFSETS[frame]
             head = [(x, y + offset if y < 470 else y) for x, y in HEAD]
@@ -136,7 +243,12 @@ def extract(video, destination):
                   [idle_head, IDLE_TAIL], 596)
         save_pose(temporary / "tap.png", destination / "tap-6.000.png",
                   [TAP_HEAD, TAP_TAIL], 600)
-    print(f"Extracted 14 run poses, idle and tap into {destination}")
+        for frame in range(INTERACTION_FRAMES):
+            polygons, bottom = interaction_envelope(frame)
+            save_pose(temporary / f"interaction-{frame + 1:02}.png",
+                      destination / f"interaction-{frame:02}.png",
+                      polygons, bottom)
+    print(f"Extracted 14 run poses, 39 interaction poses, idle and tap into {destination}")
 
 
 if __name__ == "__main__":

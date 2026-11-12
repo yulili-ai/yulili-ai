@@ -10,9 +10,9 @@ node scripts/build-hero.cjs /path/to/mitten.mp4
 
 Set `FFMPEG_BIN` or `PYTHON_BIN` if those executables are not on PATH, and `NODE_PATH` if using an existing external `sharp` installation. The original video stays local; the public repository contains only the composed assets and reproducible scripts.
 
-The renderer calls `extract-mitten.py` to extract 14 consecutive hopping poses plus idle and paw-lift poses from the supplied 1280 × 756 video. Hand-keyed masks remove the surrounding screen content, and a luminance matte preserves the original scanline drawing. These masks and timestamps are specific to this source; revisit them if the source changes. All processing is local.
+The renderer calls `extract-mitten.py` to extract 14 consecutive hopping poses and 39 consecutive interaction poses from the supplied 1280 × 756 video. Hand-keyed masks remove the surrounding screen content, and a luminance matte preserves the original scanline drawing. These masks and timestamps are specific to this source; revisit them if the source changes. All processing is local.
 
-Running uses the original hopping poses in alternating forward/reverse order, so the tail follows a continuous path between strides. Position uses an integrated velocity curve for gentle starts and stops. A single silhouette turns without crossfade ghosting. The cat returns to its opening pose and the terminal quietly resets before the loop boundary. The GIF uses a fixed 40 ms frame duration and a shared palette; the terminal renders at most three rows, in 18 px type with 32 px line spacing.
+Running uses the original hopping poses in alternating forward/reverse order, so the tail follows a continuous path between strides. Paw interaction plays a continuous section of the source footage, then retraces it to the grounded pose. Position uses an integrated velocity curve for gentle starts and stops. Each frame shows exactly one character pose, including turns, to avoid crossfade ghosting. The cat returns to its opening pose and the terminal quietly resets before the loop boundary. The GIF uses a fixed 40 ms frame duration and a shared palette; the terminal renders at most three rows, in 18 px type with 32 px line spacing.
 
 For iteration, `MITTEN_SPRITES` can point to an already extracted sprite directory. Set `KEEP_HERO_FRAMES=1` to retain rendered PNG frames for visual checks.
 

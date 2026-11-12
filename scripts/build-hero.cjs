@@ -79,8 +79,8 @@ function catAt(t) {
   const outbound=travelProgress(t,1.35,3.75);
   const inbound=travelProgress(t,7.35,9.75);
   const visit=outbound-inbound;
-  const ground=mix(419,346,visit),scale=mix(.872,.45,visit);
-  let pose='idle',poseBlend=0,angle=0;
+  const ground=mix(419,346,visit),scale=mix(.9,.45,visit);
+  let sprite=visit>.5?sprites.run[13]:sprites.run[0],angle=0;
   const going=t>=1.35&&t<3.75,returning=t>=7.35&&t<9.75;
   if(going||returning) {
     const p=going?outbound:inbound;
@@ -88,23 +88,28 @@ function catAt(t) {
     // Play consecutive hops forward/backward: the tail now retraces its arc
     // continuously instead of snapping between the original clip endpoints.
     const cycle=(p*5)%2;
-    pose=Math.round((cycle<=1?cycle:2-cycle)*13);
-    poseBlend=Math.min(progress(p,0,.06),1-progress(p,.94,1));
+    const pose=Math.round((cycle<=1?cycle:2-cycle)*13);
+    sprite=sprites.run[returning?13-pose:pose];
     angle=(going?-1:1)*4*Math.sin(Math.PI*p);
   }
-  const tap=progress(t,4.15,4.6)*(1-progress(t,4.8,5.25));
+  // Actual consecutive video poses lift and lower the paw. One image is shown
+  // at any instant; dissolving two poses would create a double face.
+  if(t>=3.75&&t<5.7) {
+    const p=t<4.65?clamp((t-3.75)/.9):t<=4.8?1:1-clamp((t-4.8)/.9);
+    sprite=sprites.interaction[Math.round(p*38)];
+  }
   const turnOut=progress(t,6.85,7.3);
   const turnHome=progress(t,9.8,10.25);
   const facing=turnOut-turnHome;
   // Keep the mirrored ears inside the right edge, including while turning.
-  const cx=mix(1015,620,visit)-70*facing*(1-visit);
+  const cx=mix(1020,620,visit)-80*facing*(1-visit);
   // One opaque silhouette turns through its narrow side; no doubled face.
   const squeeze=Math.max(.12,Math.abs(Math.cos(facing*Math.PI)));
-  const breathe=1+.002*(1-Math.cos(t*Math.PI*2/duration));
-  const wrap=(href,opacity,mirror)=>`<g opacity="${opacity}" transform="scale(${mirror?-1:1} 1)"><image x="-290" y="-590" width="580" height="610" href="${href}"/></g>`;
-  const image=(href,opacity)=>wrap(href,opacity,facing>=.5);
-  const base=sprites.tap||sprites.idle;
-  const body=image(sprites.idle,(1-poseBlend)*(1-tap))+image(base,(1-poseBlend)*tap)+(typeof pose==='number'?image(sprites.run[pose],poseBlend):'');
+  // Hold identical geometry around the loop seam. Tiny scale changes can
+  // otherwise shimmer on the cat's thin scanlines after GIF quantization.
+  const breathWeight=t<.8||t>=13.2?0:progress(t,.8,1.2)*(1-progress(t,12.6,13.2));
+  const breathe=1+.002*(1-Math.cos(t*Math.PI*2/duration))*breathWeight;
+  const body=`<g transform="scale(${facing>=.5?-1:1} 1)"><image x="-290" y="-590" width="580" height="610" href="${sprite}"/></g>`;
   return `<ellipse cx="${cx-20*scale}" cy="${ground+1}" rx="${105*scale}" ry="${5*scale}" fill="#292825" opacity=".11"/><g transform="translate(${cx} ${ground}) rotate(${angle}) scale(${scale*squeeze} ${scale*breathe})">${body}</g>`;
 }
 function svgAt(time) {
@@ -126,8 +131,7 @@ function svgAt(time) {
     if(extract.status!==0)throw new Error(extract.stderr||String(extract.error));
   }
   const data=name=>'data:image/png;base64,'+fs.readFileSync(path.join(spriteDir,name)).toString('base64');
-  sprites={idle:data('idle-1.500.png'),run:Array.from({length:14},(_,i)=>data(`run-${String(i).padStart(2,'0')}.png`))};
-  if(fs.existsSync(path.join(spriteDir,'tap-6.000.png')))sprites.tap=data('tap-6.000.png');
+  sprites={run:Array.from({length:14},(_,i)=>data(`run-${String(i).padStart(2,'0')}.png`)),interaction:Array.from({length:39},(_,i)=>data(`interaction-${String(i).padStart(2,'0')}.png`))};
   for(let i=0;i<count;i++) {
     await sharp(Buffer.from(svgAt(i/fps))).resize(1000,355).png().toFile(path.join(temp,`${String(i).padStart(3,'0')}.png`));
     if(i%50===0)console.log(`Rendered ${i}/${count}`);
