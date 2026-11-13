@@ -34,10 +34,12 @@ AI Native / Human–AI Interaction / AI Hardware
     <td>
       <strong>Bedside Agent · 床边 AI 助手</strong><br>
       意图理解、实体确认与执行反馈。<br>
-      <a href="./projects/bedside-agent.md">Project ↗</a>
+      <a href="./projects/bedside-agent.md">Project ↗</a> &nbsp; · &nbsp;
+      <a href="https://yulili-ai.github.io/bedside-agent/">Demo ↗</a> &nbsp; · &nbsp;
+      <a href="https://github.com/yulili-ai/bedside-agent">Code ↗</a>
     </td>
-    <td align="center"><a href="https://github.com/yulili-ai/yulili-ai/commits/main/projects/bedside-agent.md" title="查看项目说明页更新记录"><img src="https://img.shields.io/github/last-commit/yulili-ai/yulili-ai/main?path=projects%2Fbedside-agent.md&amp;display_timestamp=committer&amp;style=flat-square&amp;label=%E6%9B%B4%E6%96%B0&amp;color=78a54b&amp;labelColor=444c56" height="20" alt="Bedside Agent 项目说明页最近更新"></a></td>
-    <td align="center">—</td>
+    <td align="center"><a href="https://github.com/yulili-ai/bedside-agent/commits/main" title="查看项目源码更新记录"><img src="https://img.shields.io/github/last-commit/yulili-ai/bedside-agent/main?display_timestamp=committer&amp;style=flat-square&amp;label=%E6%9B%B4%E6%96%B0&amp;color=78a54b&amp;labelColor=444c56" height="20" alt="Bedside Agent 仓库最近更新"></a></td>
+    <td align="center"><a href="https://github.com/yulili-ai/bedside-agent"><img src="https://img.shields.io/github/stars/yulili-ai/bedside-agent?style=flat-square&amp;label=%E2%98%85&amp;color=58a6ff&amp;labelColor=444c56" height="20" alt="Bedside Agent GitHub Star 数"></a></td>
   </tr>
   <tr>
     <td><a href="./projects/zlinkos.md"><img src="./assets/builds/zlinkos.svg" width="160" alt="ZlinkOS 交互示意：多设备计划、分支与重试"></a></td>
