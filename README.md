@@ -30,7 +30,7 @@ AI Native / Human–AI Interaction / AI Hardware
   </thead>
   <tbody>
   <tr>
-    <td><a href="./projects/bedside-agent.md"><img src="./assets/bedside-agent/home.png" width="160" alt="Bedside Agent 本机界面：实体确认后的模拟台灯状态"></a></td>
+    <td><a href="./projects/bedside-agent.md"><img src="./assets/builds/bedside.svg" width="160" alt="Bedside Agent 交互示意：意图、实体确认与状态反馈"></a></td>
     <td>
       <strong>Bedside Agent · 床边 AI 助手</strong><br>
       意图理解、实体确认与执行反馈。<br>
