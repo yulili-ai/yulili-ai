@@ -19,38 +19,49 @@ AI Native / Human–AI Interaction / AI Hardware
 
 ## Selected Builds
 
-开发与交互实验。床边 AI 助手配图为本机界面截图，其他配图为交互示意；具体实现与边界见项目说明。
-
 <table>
+  <thead>
+    <tr>
+      <th width="160">Preview</th>
+      <th width="400">Project</th>
+      <th width="124">最近更新</th>
+      <th width="64">Star</th>
+    </tr>
+  </thead>
+  <tbody>
   <tr>
-    <td width="300"><a href="./projects/bedside-agent.md"><img src="./assets/bedside-agent/home.png" width="320" alt="Bedside Agent 本机界面：实体确认后的模拟台灯状态"></a></td>
-    <td width="580">
-      <h3>Bedside Agent</h3>
-      <p>床边 AI 助手<br>意图理解、实体确认与执行反馈。</p>
-      <p><sub>LOCAL MVP · 台灯模拟</sub></p>
-      <a href="./projects/bedside-agent.md">Project notes ↗</a>
+    <td><a href="./projects/bedside-agent.md"><img src="./assets/bedside-agent/home.png" width="160" alt="Bedside Agent 本机界面：实体确认后的模拟台灯状态"></a></td>
+    <td>
+      <strong>Bedside Agent · 床边 AI 助手</strong><br>
+      意图理解、实体确认与执行反馈。<br>
+      <a href="./projects/bedside-agent.md">Project ↗</a>
     </td>
+    <td align="center"><a href="https://github.com/yulili-ai/yulili-ai/commits/main/projects/bedside-agent.md" title="查看项目说明页更新记录"><img src="https://img.shields.io/github/last-commit/yulili-ai/yulili-ai/main?path=projects%2Fbedside-agent.md&amp;display_timestamp=committer&amp;style=flat-square&amp;label=%E6%9B%B4%E6%96%B0&amp;color=78a54b&amp;labelColor=444c56" height="20" alt="Bedside Agent 项目说明页最近更新"></a></td>
+    <td align="center">—</td>
   </tr>
   <tr>
-    <td><a href="./projects/zlinkos.md"><img src="./assets/builds/zlinkos.svg" width="320" alt="ZlinkOS 交互示意：多设备计划、分支与重试"></a></td>
-    <td width="580">
-      <h3>ZlinkOS</h3>
-      <p>智能生活 Agent<br>多设备任务编排与异常恢复的交互探索。</p>
-      <p><sub>INTERACTION PROTOTYPE · MOCK</sub></p>
-      <a href="./projects/zlinkos.md">Project notes ↗</a>
+    <td><a href="./projects/zlinkos.md"><img src="./assets/builds/zlinkos.svg" width="160" alt="ZlinkOS 交互示意：多设备计划、分支与重试"></a></td>
+    <td>
+      <strong>ZlinkOS · 智能生活 Agent</strong><br>
+      多设备任务编排与异常恢复的交互探索。<br>
+      <a href="./projects/zlinkos.md">Project ↗</a>
     </td>
+    <td align="center"><a href="https://github.com/yulili-ai/yulili-ai/commits/main/projects/zlinkos.md" title="查看项目说明页更新记录"><img src="https://img.shields.io/github/last-commit/yulili-ai/yulili-ai/main?path=projects%2Fzlinkos.md&amp;display_timestamp=committer&amp;style=flat-square&amp;label=%E6%9B%B4%E6%96%B0&amp;color=78a54b&amp;labelColor=444c56" height="20" alt="ZlinkOS 项目说明页最近更新"></a></td>
+    <td align="center">—</td>
   </tr>
   <tr>
-    <td><a href="./projects/chengyi.md"><img src="./assets/builds/chengyi.svg" width="320" alt="承艺交互示意：三维器形与创作轨迹"></a></td>
-    <td width="580">
-      <h3>Chengyi</h3>
-      <p>非遗 AI 共创体验<br>探索对话、空间交互与创作过程的结合。</p>
-      <p><sub>INTERACTIVE PROTOTYPE · 在线版使用本地规则</sub></p>
-      <a href="./projects/chengyi.md">Project notes ↗</a> &nbsp; · &nbsp;
-      <a href="https://yulili-ai.github.io/chengyi-3/">Try demo ↗</a> &nbsp; · &nbsp;
+    <td><a href="./projects/chengyi.md"><img src="./assets/builds/chengyi.svg" width="160" alt="承艺交互示意：三维器形与创作轨迹"></a></td>
+    <td>
+      <strong>Chengyi · 非遗 AI 共创体验</strong><br>
+      探索对话、空间交互与创作过程的结合。<br>
+      <a href="./projects/chengyi.md">Project ↗</a> &nbsp; · &nbsp;
+      <a href="https://yulili-ai.github.io/chengyi-3/">Demo ↗</a> &nbsp; · &nbsp;
       <a href="https://github.com/yulili-ai/chengyi-3">Code ↗</a>
     </td>
+    <td align="center"><a href="https://github.com/yulili-ai/chengyi-3/commits/main"><img src="https://img.shields.io/github/last-commit/yulili-ai/chengyi-3/main?display_timestamp=committer&amp;style=flat-square&amp;label=%E6%9B%B4%E6%96%B0&amp;color=78a54b&amp;labelColor=444c56" height="20" alt="Chengyi 仓库最近更新"></a></td>
+    <td align="center"><a href="https://github.com/yulili-ai/chengyi-3/stargazers"><img src="https://img.shields.io/github/stars/yulili-ai/chengyi-3?style=flat-square&amp;label=%E2%98%85&amp;color=58a6ff&amp;labelColor=444c56" height="20" alt="Chengyi GitHub Star 数"></a></td>
   </tr>
+  </tbody>
 </table>
 
 <br>
